@@ -1,0 +1,1 @@
+int displayBoard(int board[BOARD_HEIGHT][BOARD_WIDTH], int currentPlayer);

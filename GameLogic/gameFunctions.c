@@ -6,12 +6,17 @@
 #include "gameFunctions.h"
 
 
-int startGame(int board[BOARD_HEIGHT][BOARD_WIDTH], int *currentPlayer, bool *gameOver, int *winner, int *movesMade, int *gameMode) {
+int startGame(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int *currentPlayer, bool *gameOver, int *winner, int *movesMade, int *gameMode) {
   // Initialize the game board
-  for (int i = 0; i < BOARD_HEIGHT; i++) {
-      for (int j = 0; j < BOARD_WIDTH; j++) {
-          board[i][j] = EMPTY;
-      }
+  for (int r = 0; r < BOARD_HEIGHT; r++) {
+    for (int c = 0; c < BOARD_WIDTH; c++) {
+      board[r][c] = EMPTY;
+    }
+  }
+
+  // Initialize moves array
+  for (int i = 0; i < MAX_NUMBER_OF_MOVES; i++) {
+    moves[i] = 0;
   }
 
   // Set default settings
@@ -29,82 +34,118 @@ int startGame(int board[BOARD_HEIGHT][BOARD_WIDTH], int *currentPlayer, bool *ga
 
   // Validate game mode input
   if (*gameMode < 1 || *gameMode > 3) {
-      printf("Invalid game mode. Defaulting to Player vs AI.\n");
-      *gameMode = 2;
+    printf("Invalid game mode. Defaulting to Player vs AI.\n");
+    *gameMode = 2;
   }
 
   return 0;
 }
 
-int dropPiece(int column, int board[BOARD_HEIGHT][BOARD_WIDTH], int *currentPlayer, int *movesMade) {
-  // Check if the column is valid
+int dropPiece(int column, int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int *currentPlayer, int *movesMade) {
+  // Validate column index
   if (column < 0 || column >= BOARD_WIDTH) {
-      printf("Invalid column. Please choose a column between 0 and %d.\n", BOARD_WIDTH - 1);
-      return -1;
+    printf("Invalid column number. Please choose between 0 and %d.\n", BOARD_WIDTH - 1);
+    return -1; // Indicate invalid column
   }
 
-  // Find the lowest empty row in the selected column
-  for (int i = BOARD_HEIGHT - 1; i >= 0; i--) {
-      if (board[i][column] == EMPTY) {
-          board[i][column] = *currentPlayer;
-          *movesMade++;
-          return i; // Return the row where the piece was placed
-      }
+  // Check if the column is full
+  if (board[0][column] != EMPTY) {
+    printf("Column %d is full. Please choose another column.\n", column);
+    return -2; // Indicate column is full
   }
-
-  printf("Column %d is full. Please choose another column.\n", column);
-  return -1;
+  // Find the lowest empty row in the column
+  int row;
+  for (row = BOARD_HEIGHT - 1; row >= 0; row--) {
+    if (board[row][column] == EMPTY) {
+      break;
+    }
+  }
+  // Place the piece in the board
+  board[row][column] = *currentPlayer;
+  // Store the move
+  moves[*movesMade] = column + 1; // Store the move (1-indexed)
+  (*movesMade)++;
+  // Switch players
+  *currentPlayer = (*currentPlayer == PLAYER1) ? PLAYER1 : PLAYER2;
+  return row; // Return the row where the piece was placed
+  // Note: The row is returned to check for a win in the checkWin function
 }
 
-int checkWin(int row, int column, int board[BOARD_HEIGHT][BOARD_WIDTH], int *currentPlayer, bool *gameOver, int *movesMade) {
+
+
+int checkWin(int row, int column, int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int *currentPlayer, bool *gameOver, int *movesMade) {
+  int player = *currentPlayer == PLAYER1 ? PLAYER1 : PLAYER2;
+  int count = 0;
+
   // Check horizontal
-  for (int j = 0; j <= BOARD_WIDTH - WINNING_LENGTH; j++) {
-      if (board[row][j] == *currentPlayer &&
-          board[row][j + 1] == *currentPlayer &&
-          board[row][j + 2] == *currentPlayer &&
-          board[row][j + 3] == *currentPlayer) {
-          return 1;
+  for (int c = 0; c < BOARD_WIDTH; c++) {
+    if (board[row][c] == player) {
+      count++;
+      if (count == WINNING_LENGTH) {
+        *gameOver = true;
+        return player;
       }
+    } else {
+      count = 0;
+    }
   }
 
   // Check vertical
-  for (int i = 0; i <= BOARD_HEIGHT - WINNING_LENGTH; i++) {
-      if (board[i][column] == *currentPlayer &&
-          board[i + 1][column] == *currentPlayer &&
-          board[i + 2][column] == *currentPlayer &&
-          board[i + 3][column] == *currentPlayer) {
-          return 1;
+  count = 0;
+  for (int r = 0; r < BOARD_HEIGHT; r++) {
+    if (board[r][column] == player) {
+      count++;
+      if (count == WINNING_LENGTH) {
+        *gameOver = true;
+        return player;
       }
+    } else {
+      count = 0;
+    }
   }
 
   // Check diagonal (bottom-left to top-right)
-  for (int i = WINNING_LENGTH - 1; i < BOARD_HEIGHT; i++) {
-      for (int j = 0; j <= BOARD_WIDTH - WINNING_LENGTH; j++) {
-          if (board[i][j] == *currentPlayer &&
-              board[i - 1][j + 1] == *currentPlayer &&
-              board[i - 2][j + 2] == *currentPlayer &&
-              board[i - 3][j + 3] == *currentPlayer) {
-              return 1;
-          }
+  count = 0;
+  for (int i = -WINNING_LENGTH + 1; i < WINNING_LENGTH; i++) {
+    int r = row + i;
+    int c = column + i;
+    if (r >= 0 && r < BOARD_HEIGHT && c >= 0 && c < BOARD_WIDTH) {
+      if (board[r][c] == player) {
+        count++;
+        if (count == WINNING_LENGTH) {
+          *gameOver = true;
+          return player;
+        }
+      } else {
+        count = 0;
       }
-  }
-  // Check diagonal (top-left to bottom-right)
-  for (int i = 0; i <= BOARD_HEIGHT - WINNING_LENGTH; i++) {
-      for (int j = 0; j <= BOARD_WIDTH - WINNING_LENGTH; j++) {
-          if (board[i][j] == *currentPlayer &&
-              board[i + 1][j + 1] == *currentPlayer &&
-              board[i + 2][j + 2] == *currentPlayer &&
-              board[i + 3][j + 3] == *currentPlayer) {
-              return 1;
-          }
-      }
-  }
-  // Check for draw
-  if (*movesMade == BOARD_WIDTH * BOARD_HEIGHT) {
-      *gameOver = true;
-      printf("It's a draw!\n");
-      return 0; // Draw
+    }
   }
 
-  return 0; // No win found
+  // Check diagonal (top-left to bottom-right)
+  count = 0;
+  for (int i = -WINNING_LENGTH + 1; i < WINNING_LENGTH; i++) {
+    int r = row - i;
+    int c = column + i;
+    if (r >= 0 && r < BOARD_HEIGHT && c >= 0 && c < BOARD_WIDTH) {
+      if (board[r][c] == player) {
+        count++;
+        if (count == WINNING_LENGTH) {
+          *gameOver = true;
+          return player;
+        }
+      } else {
+        count = 0;
+      }
+    }
+  }
+
+  // Check for a draw
+  if (*movesMade == MAX_NUMBER_OF_MOVES) {
+    *gameOver = true;
+    return EMPTY; // Indicate a draw
+  }
+
+  return EMPTY; // No winner yet
+  
 }

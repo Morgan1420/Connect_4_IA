@@ -1,1 +1,1 @@
-int displayBoard(int board[BOARD_HEIGHT][BOARD_WIDTH], int currentPlayer);
+int displayBoard(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int currentPlayer);

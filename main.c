@@ -8,6 +8,7 @@
 #include "GameLogic/gameFunctions.h"
 #include "GameLogic/boardDisplay.h"
 
+int moves[MAX_NUMBER_OF_MOVES];
 int board[BOARD_HEIGHT][BOARD_WIDTH];
 int currentPlayer;
 bool gameOver;
@@ -18,18 +19,24 @@ bool exitGame;;
 
 int gameMode1() { // Player vs Player
   while (!gameOver) {
-    displayBoard(board, currentPlayer);
+    displayBoard(moves, board, currentPlayer);
   
     int column;
     printf("Player %d, choose a column (0-%d): ", currentPlayer, BOARD_WIDTH - 1);
     scanf("%d", &column);
   
     // Drop the piece
-    int row = dropPiece(column, board, &currentPlayer, &movesMade);
-    if (row != -1) {
+    int row = dropPiece(column, moves, board, &currentPlayer, &movesMade);
+    if (row == -1) {
+      printf("Invalid move. Try again.\n");
+      continue; // Skip to the next iteration
+    } else if (row == -2) {
+      printf("Column is full. Try again.\n");
+      continue; // Skip to the next iteration
+    } else {
       // Check for a win
-      if (checkWin(row, column, board, &currentPlayer, &gameOver, &movesMade)) {
-        displayBoard(board, currentPlayer);
+      if (checkWin(row, column, moves, board, &currentPlayer, &gameOver, &movesMade)) {
+        displayBoard(moves, board, currentPlayer);
         printf("Player %d wins!\n", currentPlayer);
         break;
       }
@@ -47,7 +54,7 @@ int main(int argc, char **argv) {
   while (!exitGame){
 
     // Initialize the game
-    startGame(board, &currentPlayer, &gameOver, &winner, &movesMade, &gameMode);
+    startGame(moves, board, &currentPlayer, &gameOver, &winner, &movesMade, &gameMode);
 
     // Main game loop
     // Each mode has a the main loop inside the function

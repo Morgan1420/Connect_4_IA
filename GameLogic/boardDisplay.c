@@ -21,3 +21,6 @@ int displayBoard(int board[BOARD_HEIGHT][BOARD_WIDTH], int currentPlayer) {
     printf("Current player: %d\n", currentPlayer);
     return 0;
 }
+
+
+// Si ens dona temps podríem fer un display gràfic guapo

@@ -16,6 +16,30 @@ int movesMade;
 int gameMode;
 bool exitGame;;
 
+int gameMode1() { // Player vs Player
+  while (!gameOver) {
+    displayBoard(board, currentPlayer);
+  
+    int column;
+    printf("Player %d, choose a column (0-%d): ", currentPlayer, BOARD_WIDTH - 1);
+    scanf("%d", &column);
+  
+    // Drop the piece
+    int row = dropPiece(column, board, &currentPlayer, &movesMade);
+    if (row != -1) {
+      // Check for a win
+      if (checkWin(row, column, board, &currentPlayer, &gameOver, &movesMade)) {
+        displayBoard(board, currentPlayer);
+        printf("Player %d wins!\n", currentPlayer);
+        break;
+      }
+    
+      // Switch players
+      currentPlayer = (currentPlayer == PLAYER1) ? PLAYER2 : PLAYER1;
+    }
+  }
+}
+
 int main(int argc, char **argv) {
 
   exitGame = false;
@@ -26,26 +50,15 @@ int main(int argc, char **argv) {
     startGame(board, &currentPlayer, &gameOver, &winner, &movesMade, &gameMode);
 
     // Main game loop
-    while (!gameOver) {
-      displayBoard(board, currentPlayer);
-      int column;
-      printf("Player %d, choose a column (0-%d): ", currentPlayer, BOARD_WIDTH - 1);
-      scanf("%d", &column);
-
-      // Drop the piece
-      int row = dropPiece(column, board, &currentPlayer, &movesMade);
-      if (row != -1) {
-        // Check for a win
-        if (checkWin(row, column, board, &currentPlayer, &gameOver, &movesMade)) {
-          displayBoard(board, currentPlayer);
-          printf("Player %d wins!\n", currentPlayer);
-          break;
-        }
-      
-        // Switch players
-      currentPlayer = (currentPlayer == PLAYER1) ? PLAYER2 : PLAYER1;
-      }
+    // Each mode has a the main loop inside the function
+    if (gameMode == 1) {
+      gameMode1(); // Player vs Player
+    } else if (gameMode == 2) {
+      // Implement AI vs Player logic here
+    } else if (gameMode == 3) {
+      // Implement AI vs AI logic here
     }
+    
 
     // Ask if the player wants to play again
     printf("Do you want to play again? (y/n): ");

@@ -1,5 +1,5 @@
 // command to execute the code
-// gcc -o connect4 main.c GameLogic/gameFunctions.c GameLogic/boardDisplay.c && ./connect4
+// gcc -o connect4 main.c GameLogic/gameFunctions.c GameLogic/boardDisplay.c MLContent/minimaxAlgo.c MLContent/alphaBetaAlgo.c && ./connect4
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -7,6 +7,10 @@
 
 #include "GameLogic/gameFunctions.h"
 #include "GameLogic/boardDisplay.h"
+#include "MLContent/minimaxAlgo.h"
+#include "MLContent/alphaBetaAlgo.h"
+
+#define minmaxDepth 8 // Depth for Minimax algorithm (change as needed)
 
 int moves[MAX_NUMBER_OF_MOVES];
 int board[BOARD_HEIGHT][BOARD_WIDTH];
@@ -15,9 +19,12 @@ bool gameOver;
 int winner;
 int movesMade;
 int gameMode;
-bool exitGame;;
+bool exitGame;
 
-int gameMode1() { // Player vs Player
+
+
+// Player vs Player
+int gameMode1() { 
   while (!gameOver) {
     displayBoard(moves, board, currentPlayer);
   
@@ -26,7 +33,7 @@ int gameMode1() { // Player vs Player
     scanf("%d", &column);
   
     // Drop the piece
-    int row = dropPiece(column, moves, board, &currentPlayer, &movesMade);
+    int row = dropPiece(column, moves, board, currentPlayer, &movesMade);
     if (row == -1) {
       printf("Invalid move. Try again.\n");
       continue; // Skip to the next iteration
@@ -35,7 +42,7 @@ int gameMode1() { // Player vs Player
       continue; // Skip to the next iteration
     } else {
       // Check for a win
-      if (checkWin(row, column, moves, board, &currentPlayer, &gameOver, &movesMade)) {
+      if (checkWin(row, column, board, currentPlayer, &gameOver, movesMade)) {
         displayBoard(moves, board, currentPlayer);
         printf("Player %d wins!\n", currentPlayer);
         break;
@@ -46,6 +53,75 @@ int gameMode1() { // Player vs Player
     }
   }
 }
+
+// Player vs AI
+int gameMode2() {
+  while (!gameOver) {
+    displayBoard(moves, board, currentPlayer);
+  
+    int column;
+    if (currentPlayer == PLAYER1) {
+      printf("Player %d, choose a column (0-%d): ", currentPlayer, BOARD_WIDTH - 1);
+      scanf("%d", &column);
+    } else {
+      // AI's turn
+      column = getBestMove(moves, board, minmaxDepth, currentPlayer, movesMade);
+      printf("AI chooses column %d\n", column);
+    }
+  
+    // Drop the piece
+    int row = dropPiece(column, moves, board, currentPlayer, &movesMade);
+    if (row == -1) {
+      printf("Invalid move. Try again.\n");
+      continue; // Skip to the next iteration
+    } else if (row == -2) {
+      printf("Column is full. Try again.\n");
+      continue; // Skip to the next iteration
+    } else {
+      // Check for a win
+      if (checkWin(row, column, board, currentPlayer, &gameOver, movesMade)) {
+        displayBoard(moves, board, currentPlayer);
+        printf("Player %d wins!\n", currentPlayer);
+        break;
+      }
+    
+      // Switch players
+      currentPlayer = (currentPlayer == PLAYER1) ? PLAYER2 : PLAYER1;
+    }
+  }
+}
+
+int gameMode3() {
+  // Implement AI vs AI logic here
+  while (!gameOver) {
+    displayBoard(moves, board, currentPlayer);
+  
+    // AI's turn
+    int column = getBestMove(moves, board, minmaxDepth, currentPlayer, movesMade);
+    printf("AI chooses column %d\n", column);
+  
+    // Drop the piece
+    int row = dropPiece(column, moves, board, currentPlayer, &movesMade);
+    if (row == -1) {
+      printf("Invalid move. Try again.\n");
+      continue; // Skip to the next iteration
+    } else if (row == -2) {
+      printf("Column is full. Try again.\n");
+      continue; // Skip to the next iteration
+    } else {
+      // Check for a win
+      if (checkWin(row, column, board, currentPlayer, &gameOver, movesMade)) {
+        displayBoard(moves, board, currentPlayer);
+        printf("Player %d wins!\n", currentPlayer);
+        break;
+      }
+    
+      // Switch players
+      currentPlayer = (currentPlayer == PLAYER1) ? PLAYER2 : PLAYER1;
+    }
+  }
+}
+
 
 int main(int argc, char **argv) {
 
@@ -61,9 +137,9 @@ int main(int argc, char **argv) {
     if (gameMode == 1) {
       gameMode1(); // Player vs Player
     } else if (gameMode == 2) {
-      // Implement AI vs Player logic here
+      gameMode2(); // Player vs AI
     } else if (gameMode == 3) {
-      // Implement AI vs AI logic here
+      gameMode3(); // AI vs AI
     }
     
 

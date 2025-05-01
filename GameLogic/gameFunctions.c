@@ -41,7 +41,7 @@ int startGame(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDT
   return 0;
 }
 
-int dropPiece(int column, int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int *currentPlayer, int *movesMade) {
+int dropPiece(int column, int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int currentPlayer, int *movesMade) {
   // Validate column index
   if (column < 0 || column >= BOARD_WIDTH) {
     printf("Invalid column number. Please choose between 0 and %d.\n", BOARD_WIDTH - 1);
@@ -61,20 +61,19 @@ int dropPiece(int column, int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT
     }
   }
   // Place the piece in the board
-  board[row][column] = *currentPlayer;
+  board[row][column] = currentPlayer;
   // Store the move
   moves[*movesMade] = column + 1; // Store the move (1-indexed)
   (*movesMade)++;
-  // Switch players
-  *currentPlayer = (*currentPlayer == PLAYER1) ? PLAYER1 : PLAYER2;
+
   return row; // Return the row where the piece was placed
   // Note: The row is returned to check for a win in the checkWin function
 }
 
 
 
-int checkWin(int row, int column, int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int *currentPlayer, bool *gameOver, int *movesMade) {
-  int player = *currentPlayer == PLAYER1 ? PLAYER1 : PLAYER2;
+int checkWin(int row, int column, int board[BOARD_HEIGHT][BOARD_WIDTH], int currentPlayer, bool *gameOver, int movesMade) {
+  int player = currentPlayer;
   int count = 0;
 
   // Check horizontal
@@ -141,11 +140,35 @@ int checkWin(int row, int column, int moves[MAX_NUMBER_OF_MOVES], int board[BOAR
   }
 
   // Check for a draw
-  if (*movesMade == MAX_NUMBER_OF_MOVES) {
+  if (movesMade == MAX_NUMBER_OF_MOVES) {
     *gameOver = true;
     return EMPTY; // Indicate a draw
   }
 
   return EMPTY; // No winner yet
   
+}
+
+int reconstructBoard( int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int movesMade) {
+  // Empty the board 
+  for (int r = 0; r < BOARD_HEIGHT; r++) {
+    for (int c = 0; c < BOARD_WIDTH; c++) {
+      board[r][c] = EMPTY;
+    }
+  }
+
+  // Reconstruct the board based on moves
+  for (int i = 0; i < movesMade; i++) {
+    int column = moves[i] - 1; // Convert to 0-indexed
+    // Find the lowest empty row in the column
+    int row;
+    for (row = BOARD_HEIGHT - 1; row >= 0; row--) {
+      if (board[row][column] == EMPTY) {
+        break;
+      }
+    }
+    // Place the piece in the board
+    board[row][column] = (i % 2 == 0) ? PLAYER1 : PLAYER2; // Alternate players
+  }
+  return 0;
 }

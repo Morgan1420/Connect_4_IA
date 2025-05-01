@@ -8,7 +8,7 @@
 
 int displayBoard(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int currentPlayer) {
     // Clear the console
-    printf("\033[H\033[J"); // ANSI escape code to clear the screen
+    //printf("\033[H\033[J"); // ANSI escape code to clear the screen
 
     // Display the game board
     printf("Current board:\n");

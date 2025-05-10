@@ -1,0 +1,500 @@
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 2
+Depth: 8
+Rank 0 out of 2 processes
+Rank 1 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 1 seconds
+Elapsed time: 1.36276 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 4
+Depth: 8
+Rank 1 out of 4 processes
+Rank 2 out of 4 processes
+Rank 3 out of 4 processes
+Rank 0 out of 4 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 0 seconds
+Elapsed time: 0.76844 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 6
+Depth: 8
+Rank 3 out of 6 processes
+Rank 4 out of 6 processes
+Rank 1 out of 6 processes
+Rank 0 out of 6 processes
+Rank 2 out of 6 processes
+Rank 5 out of 6 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 0 seconds
+Elapsed time: 0.61987 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 7
+Depth: 8
+Rank 6 out of 7 processes
+Rank 0 out of 7 processes
+Rank 2 out of 7 processes
+Rank 4 out of 7 processes
+Rank 3 out of 7 processes
+Rank 5 out of 7 processes
+Rank 1 out of 7 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 0 seconds
+Elapsed time: 0.44843 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 2
+Depth: 9
+Rank 0 out of 2 processes
+Rank 1 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 8 seconds
+Elapsed time: 8.92253 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 4
+Depth: 9
+Rank 3 out of 4 processes
+Rank 1 out of 4 processes
+Rank 2 out of 4 processes
+Rank 0 out of 4 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 4 seconds
+Elapsed time: 4.97149 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 6
+Depth: 9
+Rank 1 out of 6 processes
+Rank 0 out of 6 processes
+Rank 5 out of 6 processes
+Rank 2 out of 6 processes
+Rank 4 out of 6 processes
+Rank 3 out of 6 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 4 seconds
+Elapsed time: 4.08283 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 7
+Depth: 9
+Rank 5 out of 7 processes
+Rank 0 out of 7 processes
+Rank 3 out of 7 processes
+Rank 4 out of 7 processes
+Rank 1 out of 7 processes
+Rank 2 out of 7 processes
+Rank 6 out of 7 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 2 seconds
+Elapsed time: 2.61463 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 2
+Depth: 10
+Rank 1 out of 2 processes
+Rank 0 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 58 seconds
+Elapsed time: 58.94524 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 4
+Depth: 10
+Rank 1 out of 4 processes
+Rank 3 out of 4 processes
+Rank 0 out of 4 processes
+Rank 2 out of 4 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 32 seconds
+Elapsed time: 32.56064 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 6
+Depth: 10
+Rank 4 out of 6 processes
+Rank 5 out of 6 processes
+Rank 0 out of 6 processes
+Rank 1 out of 6 processes
+Rank 2 out of 6 processes
+Rank 3 out of 6 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 27 seconds
+Elapsed time: 27.30217 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 7
+Depth: 10
+Rank 2 out of 7 processes
+Rank 5 out of 7 processes
+Rank 0 out of 7 processes
+Rank 6 out of 7 processes
+Rank 3 out of 7 processes
+Rank 4 out of 7 processes
+Rank 1 out of 7 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 16 seconds
+Elapsed time: 16.95859 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 2
+Depth: 11
+Rank 1 out of 2 processes
+Rank 0 out of 2 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 389 seconds
+Elapsed time: 389.71469 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 4
+Depth: 11
+Rank 0 out of 4 processes
+Rank 1 out of 4 processes
+Rank 2 out of 4 processes
+Rank 3 out of 4 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 213 seconds
+Elapsed time: 213.51535 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 6
+Depth: 11
+Rank 1 out of 6 processes
+Rank 0 out of 6 processes
+Rank 5 out of 6 processes
+Rank 4 out of 6 processes
+Rank 2 out of 6 processes
+Rank 3 out of 6 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 181 seconds
+Elapsed time: 181.52045 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 7
+Depth: 11
+Rank 4 out of 7 processes
+Rank 2 out of 7 processes
+Rank 6 out of 7 processes
+Rank 0 out of 7 processes
+Rank 3 out of 7 processes
+Rank 5 out of 7 processes
+Rank 1 out of 7 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 110 seconds
+Elapsed time: 110.88186 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------

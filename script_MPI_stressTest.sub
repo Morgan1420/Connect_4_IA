@@ -16,16 +16,19 @@ module load openmpi/4.1.1
 mpicc -Ofast main.c GameLogic/boardDisplay.c GameLogic/gameFunctions.c MLContent/alphaBetaAlgo.c MLContent/minimaxAlgo.c -o connect4 -lm -lmpi
 
 
-for PROC in 2 4
+for DEPTH in 8 9 10 11
 do
-    echo "OMP_NUM_THREADS: Sequential"
-    echo "MPI_NUM_PROCS: $PROC"
-    echo "Depth: 8"
+    for PROC in 2 4 6 7
+    do
+        echo "---------------------------------------"
+        echo "OMP_NUM_THREADS: Sequential"
+        echo "MPI_NUM_PROCS: $PROC"
+        echo "Depth: $DEPTH"
 
-    ## export OMP_NUM_THREADS=1
+        ## export OMP_NUM_THREADS=1
 
-    mpirun -np $PROC ./connect4 8
+        mpirun -np $PROC ./connect4 $DEPTH
 
-    echo "---------------------------------------"
-
+        echo "---------------------------------------"
+    done
 done

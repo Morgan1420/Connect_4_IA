@@ -118,8 +118,11 @@ int gameMode3(int rank, int size) {
     } else {
       // Check for a win
       if (checkWin(row, column, board, currentPlayer, &gameOver, movesMade)) {
-        displayBoard(moves, board, currentPlayer);
-        printf("Player %d wins!\n", currentPlayer);
+        if (rank == 0) {
+          displayBoard(moves, board, currentPlayer);
+          printf("Player %d wins!\n", currentPlayer);
+        }
+        
         break;
       }
     

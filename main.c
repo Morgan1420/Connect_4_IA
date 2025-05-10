@@ -5,6 +5,10 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+#include <fcntl.h>
+#include <sys/time.h>
+#include <mpi.h>
+
 #include "GameLogic/gameFunctions.h"
 #include "GameLogic/boardDisplay.h"
 #include "MLContent/minimaxAlgo.h"
@@ -57,7 +61,7 @@ int gameMode1() {
 }
 
 // Player vs AI
-int gameMode2() {
+int gameMode2(int rank, int size) {
   while (!gameOver) {
     displayBoard(moves, board, currentPlayer);
   
@@ -67,7 +71,7 @@ int gameMode2() {
       scanf("%d", &column);
     } else {
       // AI's turn
-      column = getBestMove(moves, board, minmaxDepth, currentPlayer, movesMade);
+      column = getBestMove(moves, board, minmaxDepth, currentPlayer, movesMade, rank, size);
       printf("AI chooses column %d\n", column);
     }
   
@@ -94,13 +98,13 @@ int gameMode2() {
 }
 
 // AI vs AI
-int gameMode3() {
+int gameMode3(int rank, int size) {
   // Implement AI vs AI logic here
   while (!gameOver) {
     //displayBoard(moves, board, currentPlayer);
   
     // AI's turn
-    int column = getBestMove(moves, board, minmaxDepth, currentPlayer, movesMade);
+    int column = getBestMove(moves, board, minmaxDepth, currentPlayer, movesMade, rank, size);
     // printf("AI chooses column %d\n", column); -- comented for debugging purposes
   
     // Drop the piece
@@ -151,6 +155,7 @@ int main(int argc, char **argv) {
   // Collect the rank and size of each process
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   MPI_Comm_size(MPI_COMM_WORLD, &size);
+  printf("Rank %d out of %d processes\n", rank, size);
 
   // Start the game loop
   exitGame = false;
@@ -163,18 +168,31 @@ int main(int argc, char **argv) {
     if (gameMode == 1) {
       gameMode1(); // Player vs Player
     } else if (gameMode == 2) {
-      gameMode2(); // Player vs AI
+      gameMode2(rank, size); // Player vs AI
     } else if (gameMode == 3) {
       // Start measuring time
       struct timeval begin;
       gettimeofday(&begin, 0);
       
+
+
       // Run the AI vs AI game
-      gameMode3(); // AI vs AI
+      gameMode3(rank, size); // AI vs AI
 
       // Stop measuring time and calculate the elapsed time
-      double elapsed = elapsedT(begin);
-      printf("Elapsed time: %.2f seconds\n", elapsed);
+      if (rank == 0) {
+        struct timeval end;
+        gettimeofday(&end, 0);
+        long seconds = end.tv_sec - begin.tv_sec;
+        long micros = end.tv_usec - begin.tv_usec;
+        long elapsed = seconds * 1000000 + micros; // Total elapsed time in microseconds
+        // printf("Elapsed time: %ld microseconds\n", elapsed);
+        printf("Elapsed time: %ld seconds\n", elapsed / 1000000);
+
+        // Print the time in seconds with 5 decimal places
+        printf("Elapsed time: %.5f seconds\n", (float)elapsed / 1000000);
+      }
+      
     }
 
 
@@ -199,6 +217,12 @@ int main(int argc, char **argv) {
   }
   
   printf("Exiting the game...\n");
+
+  // Finalize the MPI code
+  if (MPI_Finalize() != MPI_SUCCESS) {
+      fprintf(stderr, "MPI finalization failed!\n");
+      return 1;
+  }
 
   return 0;
 }

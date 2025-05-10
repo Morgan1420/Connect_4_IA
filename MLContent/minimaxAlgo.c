@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
+#include <mpi.h>
+#include <fcntl.h>
 
 #include "../GameLogic/gameFunctions.h"
 #include "../GameLogic/boardDisplay.h"
@@ -14,7 +17,7 @@ int max(int a, int b) {
 }
 
 
-int getBestMove(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int depth, int currentPlayer, int movesMade) {
+int getBestMove(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int depth, int currentPlayer, int movesMade, int rank, int size) {
   // Function variables
   int bestMove = -1;
   int bestScore = -1000; // Initialize to a very low value for maximizing player
@@ -24,7 +27,8 @@ int getBestMove(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WI
   int tempMoves[MAX_NUMBER_OF_MOVES];
   int tempMovesMade;
 
-  for(int c = 0; c < BOARD_WIDTH; c++) {
+  // Explore all the columns
+  for(int c = rank; c < BOARD_WIDTH; c += size) {
     // Retrieve the moves made at the beginning
     for(int i = 0; i < movesMade; i++) {
       tempMoves[i] = moves[i];
@@ -59,15 +63,8 @@ int getBestMove(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WI
       columnScore = -1000; 
     }
     
-    // Check if the column Score is greater than the best Score
-    if (columnScore > bestScore) {
-      bestScore = columnScore;
-      bestMove = c; // Update the best move
-    }
-
     // Store the column Score
     columnScores[c] = columnScore;
-
   }
 
   // Print the column scores -- commented for debugging purposes
@@ -78,6 +75,34 @@ int getBestMove(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WI
   }
   printf("\n");
   */
+
+  // All the processes send the column scores to the rank 0 process
+  if (rank != 0) {
+    MPI_Send(columnScores, BOARD_WIDTH, MPI_INT, 0, 0, MPI_COMM_WORLD);
+  } else {
+    // Rank 0 process receives the column scores from all other processes
+    for (int i = 1; i < size; i++) {
+      int tempColumnScores[BOARD_WIDTH];
+      MPI_Recv(tempColumnScores, BOARD_WIDTH, MPI_INT, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+      for (int c = 0; c < BOARD_WIDTH; c++) {
+        columnScores[c] += tempColumnScores[c]; // Combine the scores
+      }
+    }
+  }
+
+  // The rank 0 process will find the best move
+  if (rank == 0) {
+    // Find the best move based on the column scores
+    for (int c = 0; c < BOARD_WIDTH; c++) {
+      if (columnScores[c] > bestScore) {
+        bestScore = columnScores[c];
+        bestMove = c;
+      }
+    }
+  }
+
+  // Broadcast the best move to all processes
+  MPI_Bcast(&bestMove, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
   return bestMove; // Return the best move
 

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#SBATCH --job-name=mpi
+##SBATCH --output=mpi.txt
+#SBATCH -N 2 # number of nodes
+##SBATCH -n 15 # number of cores/processes
+##SBATCH --distribution=cyclic
+#SBATCH --exclusive
+##SBATCH --partition=nodo.q  #cluster Wilma
+#SBATCH --partition=new-nodo.q  #cluster Wilma++
+##SBATCH --partition=aolin.q  #cluster aolin laboratori (només funciona per la nit)
+
+module add gcc/12.1.1
+module load openmpi/4.1.1
+
+mpicc -Ofast main.c GameLogic/boardDisplay.c GameLogic/gameFunctions.c MLContent/alphaBetaAlgo.c MLContent/minimaxAlgo.c -o connect4 -lm -lmpi
+
+
+for DEPTH in 8 9 10 11
+do
+    for PROC in 2 4 6 7
+    do
+        echo "---------------------------------------"
+        echo "OMP_NUM_THREADS: Sequential"
+        echo "MPI_NUM_PROCS: $PROC"
+        echo "Depth: $DEPTH"
+
+        ## export OMP_NUM_THREADS=1
+
+        mpirun -np $PROC ./connect4 $DEPTH
+
+        echo "---------------------------------------"
+    done
+done

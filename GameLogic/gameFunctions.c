@@ -26,11 +26,12 @@ int startGame(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDT
   *movesMade = 0;
 
   // Set game mode based on user input
-  printf("Select game mode:\n");
-  printf("1. Player vs Player\n");
-  printf("2. Player vs AI\n");
-  printf("3. AI vs AI\n");
-  scanf("%d", gameMode);
+  //printf("Select game mode:\n");  // -- comented for debugging purposes
+  //printf("1. Player vs Player\n");  // -- comented for debugging purposes
+  //printf("2. Player vs AI\n");  // -- comented for debugging purposes
+  //printf("3. AI vs AI\n");  // -- comented for debugging purposes
+  //scanf("%d", gameMode);  // -- comented for debugging purposes
+  *gameMode = 3; 
 
   // Validate game mode input
   if (*gameMode < 1 || *gameMode > 3) {

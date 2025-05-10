@@ -70,12 +70,14 @@ int getBestMove(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WI
 
   }
 
-  // Print the column scores for debugging
+  // Print the column scores -- commented for debugging purposes
+  /*
   printf("Column scores: ");
   for (int i = 0; i < BOARD_WIDTH; i++) {
     printf("%d ", columnScores[i]);
   }
   printf("\n");
+  */
 
   return bestMove; // Return the best move
 

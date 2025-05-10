@@ -1,0 +1,214 @@
+OMP_NUM_THREADS = Sequential
+MPI_NUM_PROCS = 1
+Depth = 10
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+
+ Performance counter stats for './connect4 8':
+
+          2,496.09 msec task-clock:u              #    0.999 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+                78      page-faults:u             #   31.249 /sec                   
+     9,914,882,661      cycles:u                  #    3.972 GHz                    
+    26,759,459,751      instructions:u            #    2.70  insn per cycle         
+     5,460,566,016      branches:u                #    2.188 G/sec                  
+       110,489,836      branch-misses:u           #    2.02% of all branches        
+    59,489,090,712      slots:u                   #   23.833 G/sec                  
+    24,262,217,388      topdown-retiring:u        #     40.5% retiring              
+    11,664,527,590      topdown-bad-spec:u        #     19.5% bad speculation       
+    21,929,311,870      topdown-fe-bound:u        #     36.6% frontend bound        
+     2,099,614,966      topdown-be-bound:u        #      3.5% backend bound         
+     1,166,452,759      topdown-heavy-ops:u       #      1.9% heavy operations       #     38.5% light operations      
+    11,664,527,590      topdown-br-mispredict:u   #     19.5% branch mispredict      #      0.0% machine clears        
+     9,798,203,176      topdown-fetch-lat:u       #     16.3% fetch latency          #     20.2% fetch bandwidth       
+         2,713,364      topdown-mem-bound:u       #      0.0% memory bound           #      3.5% Core bound            
+
+       2.499309423 seconds time elapsed
+
+       2.493844000 seconds user
+       0.000000000 seconds sys
+
+
+------------------------------------------------------------
+OMP_NUM_THREADS = Sequential
+MPI_NUM_PROCS = 1
+Depth = 10
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+
+ Performance counter stats for './connect4 9':
+
+         16,274.91 msec task-clock:u              #    1.000 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+                79      page-faults:u             #    4.854 /sec                   
+    64,838,643,395      cycles:u                  #    3.984 GHz                    
+   174,987,627,716      instructions:u            #    2.70  insn per cycle         
+    35,671,442,107      branches:u                #    2.192 G/sec                  
+       723,645,389      branch-misses:u           #    2.03% of all branches        
+   389,029,921,176      slots:u                   #   23.904 G/sec                  
+   157,137,576,004      topdown-retiring:u        #     40.1% retiring              
+    76,280,376,701      topdown-bad-spec:u        #     19.5% bad speculation       
+   144,932,715,732      topdown-fe-bound:u        #     37.0% frontend bound        
+    13,730,467,806      topdown-be-bound:u        #      3.5% backend bound         
+     9,153,645,204      topdown-heavy-ops:u       #      2.3% heavy operations       #     37.7% light operations      
+    76,280,376,701      topdown-br-mispredict:u   #     19.5% branch mispredict      #      0.0% machine clears        
+    59,498,693,826      topdown-fetch-lat:u       #     15.2% fetch latency          #     21.8% fetch bandwidth       
+                 0      topdown-mem-bound:u       #      0.0% memory bound           #      3.5% Core bound            
+
+      16.278143868 seconds time elapsed
+
+      16.256456000 seconds user
+       0.000991000 seconds sys
+
+
+------------------------------------------------------------
+OMP_NUM_THREADS = Sequential
+MPI_NUM_PROCS = 1
+Depth = 10
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+
+ Performance counter stats for './connect4 10':
+
+        107,339.40 msec task-clock:u              #    1.000 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+                77      page-faults:u             #    0.717 /sec                   
+   427,724,405,626      cycles:u                  #    3.985 GHz                    
+ 1,150,801,174,633      instructions:u            #    2.69  insn per cycle         
+   234,532,716,707      branches:u                #    2.185 G/sec                  
+     4,702,688,973      branch-misses:u           #    2.01% of all branches        
+ 2,566,344,714,084      slots:u                   #   23.909 G/sec                  
+ 1,066,794,273,305      topdown-retiring:u        #     40.9% retiring              
+   523,333,039,734      topdown-bad-spec:u        #     20.1% bad speculation       
+   935,961,013,371      topdown-fe-bound:u        #     35.9% frontend bound        
+    80,512,775,343      topdown-be-bound:u        #      3.1% backend bound         
+    60,384,581,507      topdown-heavy-ops:u       #      2.3% heavy operations       #     38.6% light operations      
+   513,268,942,816      topdown-br-mispredict:u   #     19.7% branch mispredict      #      0.4% machine clears        
+   382,435,682,883      topdown-fetch-lat:u       #     14.7% fetch latency          #     21.2% fetch bandwidth       
+                 0      topdown-mem-bound:u       #      0.0% memory bound           #      3.1% Core bound            
+
+     107.343202931 seconds time elapsed
+
+     107.220254000 seconds user
+       0.000000000 seconds sys
+
+
+------------------------------------------------------------
+OMP_NUM_THREADS = Sequential
+MPI_NUM_PROCS = 1
+Depth = 10
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+
+ Performance counter stats for './connect4 11':
+
+        709,027.48 msec task-clock:u              #    1.000 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+                78      page-faults:u             #    0.110 /sec                   
+ 2,824,981,073,272      cycles:u                  #    3.984 GHz                    
+ 7,637,549,299,697      instructions:u            #    2.70  insn per cycle         
+ 1,553,670,659,902      branches:u                #    2.191 G/sec                  
+    30,842,516,649      branch-misses:u           #    1.99% of all branches        
+16,949,849,863,128      slots:u                   #   23.906 G/sec                  
+ 7,045,819,943,104      topdown-retiring:u        #     41.2% retiring              
+ 3,456,439,972,088      topdown-bad-spec:u        #     20.2% bad speculation       
+ 6,048,769,951,155      topdown-fe-bound:u        #     35.4% frontend bound        
+   531,759,995,705      topdown-be-bound:u        #      3.1% backend bound         
+   398,819,996,779      topdown-heavy-ops:u       #      2.3% heavy operations       #     38.9% light operations      
+ 3,456,439,972,088      topdown-br-mispredict:u   #     20.2% branch mispredict      #      0.0% machine clears        
+ 2,259,979,981,750      topdown-fetch-lat:u       #     13.2% fetch latency          #     22.2% fetch bandwidth       
+                 0      topdown-mem-bound:u       #      0.0% memory bound           #      3.1% Core bound            
+
+     709.037757957 seconds time elapsed
+
+     708.212042000 seconds user
+       0.001995000 seconds sys
+
+
+------------------------------------------------------------
+OMP_NUM_THREADS = Sequential
+MPI_NUM_PROCS = 1
+Depth = 10
+Current board:
+2 2 1 1 0 0 0 
+1 1 2 2 0 0 0 
+2 2 1 1 2 0 0 
+1 1 2 2 1 0 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 7 7 6 6 
+Player 2 wins!
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+
+ Performance counter stats for './connect4 12':
+
+      4,694,677.46 msec task-clock:u              #    1.000 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+                80      page-faults:u             #    0.017 /sec                   
+18,703,838,470,068      cycles:u                  #    3.984 GHz                    
+50,374,409,990,345      instructions:u            #    2.69  insn per cycle         
+10,255,272,390,410      branches:u                #    2.184 G/sec                  
+   199,567,193,277      branch-misses:u           #    1.95% of all branches        
+112,222,963,443,372      slots:u                   #   23.904 G/sec                  
+45,769,365,482,787      topdown-retiring:u        #     40.3% retiring              
+22,884,682,741,393      topdown-bad-spec:u        #     20.2% bad speculation       
+41,368,464,955,595      topdown-fe-bound:u        #     36.4% frontend bound        
+ 3,520,720,421,752      topdown-be-bound:u        #      3.1% backend bound         
+ 2,200,450,263,595      topdown-heavy-ops:u       #      1.9% heavy operations       #     38.4% light operations      
+22,444,592,688,674      topdown-br-mispredict:u   #     19.8% branch mispredict      #      0.4% machine clears        
+17,163,512,056,045      topdown-fetch-lat:u       #     15.1% fetch latency          #     21.3% fetch bandwidth       
+                 0      topdown-mem-bound:u       #      0.0% memory bound           #      3.1% Core bound            
+
+    4694.721305243 seconds time elapsed
+
+    4689.281582000 seconds user
+       0.000999000 seconds sys
+
+

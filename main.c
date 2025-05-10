@@ -10,7 +10,7 @@
 #include "MLContent/minimaxAlgo.h"
 #include "MLContent/alphaBetaAlgo.h"
 
-#define minmaxDepth 8 // Depth for Minimax algorithm (change as needed)
+//#define minmaxDepth 10 // Depth for Minimax algorithm (change as needed)
 
 int moves[MAX_NUMBER_OF_MOVES];
 int board[BOARD_HEIGHT][BOARD_WIDTH];
@@ -20,6 +20,8 @@ int winner;
 int movesMade;
 int gameMode;
 bool exitGame;
+
+int minmaxDepth = 8; // Set depth for Minimax algorithm from command line argument or default to 10
 
 
 
@@ -91,14 +93,15 @@ int gameMode2() {
   }
 }
 
+// AI vs AI
 int gameMode3() {
   // Implement AI vs AI logic here
   while (!gameOver) {
-    displayBoard(moves, board, currentPlayer);
+    //displayBoard(moves, board, currentPlayer);
   
     // AI's turn
     int column = getBestMove(moves, board, minmaxDepth, currentPlayer, movesMade);
-    printf("AI chooses column %d\n", column);
+    // printf("AI chooses column %d\n", column); -- comented for debugging purposes
   
     // Drop the piece
     int row = dropPiece(column, moves, board, currentPlayer, &movesMade);
@@ -125,28 +128,61 @@ int gameMode3() {
 
 int main(int argc, char **argv) {
 
-  exitGame = false;
+  // Process the command line arguments
+  minmaxDepth = argc > 1 ? atoi(argv[1]) : 8; // Set depth for Minimax algorithm from command line argument or default to 10
+  if (minmaxDepth < 1 || minmaxDepth > MAX_NUMBER_OF_MOVES) {
+    printf("Invalid depth. Setting to default value of 8.\n");
+    minmaxDepth = 8;
+  }
+  // Eliminate the depth from the command line arguments
+  argc--;
+  argv++;
 
-  while (!exitGame){
+  // MPI initialization
+  int rank, size, err; // Variables for MPI
+
+  // Initialize the MPI code
+  err = MPI_Init(&argc, &argv);
+  if (err != MPI_SUCCESS) {
+      fprintf(stderr, "MPI initialization failed!\n");
+      return 1;
+  }
+
+  // Collect the rank and size of each process
+  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+  MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+  // Start the game loop
+  exitGame = false;
+  while (!exitGame) {
 
     // Initialize the game
     startGame(moves, board, &currentPlayer, &gameOver, &winner, &movesMade, &gameMode);
 
-    // Main game loop
-    // Each mode has a the main loop inside the function
+    // Each mode has a loop inside the function
     if (gameMode == 1) {
       gameMode1(); // Player vs Player
     } else if (gameMode == 2) {
       gameMode2(); // Player vs AI
     } else if (gameMode == 3) {
+      // Start measuring time
+      struct timeval begin;
+      gettimeofday(&begin, 0);
+      
+      // Run the AI vs AI game
       gameMode3(); // AI vs AI
+
+      // Stop measuring time and calculate the elapsed time
+      double elapsed = elapsedT(begin);
+      printf("Elapsed time: %.2f seconds\n", elapsed);
     }
-    
+
 
     // Ask if the player wants to play again
     printf("Do you want to play again? (y/n): ");
-    char choice;
-    scanf(" %c", &choice);
+    char choice = 'n';
+    //scanf(" %c", &choice); // -- comented for debugging purposes
+    
     if (choice == 'n' || choice == 'N') {
       exitGame = true;
       printf("Thanks for playing!\n");

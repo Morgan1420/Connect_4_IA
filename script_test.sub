@@ -1,0 +1,16 @@
+##SBATCH --partition=nodo.q  #cluster Wilma
+#SBATCH --partition=new-nodo.q  #cluster Wilma++
+##SBATCH --partition=aolin.q  #cluster aolin laboratori (només funciona per la nit)
+##SBATCH --partition=test.q #semblant a l'aolin- però funciona durant el dia, el profe diu que millor no fer-lo servir com a substitut de l'aolin pero que pel perf funciona
+
+
+module add gcc/12.1.1
+
+gcc -fopenmp -Ofast main.c GameLogic/boardDisplay.c GameLogic/gameFunctions.c MLContent/alphaBetaAlgo.c MLContent/minimaxAlgo.c -o connect4 -lm
+
+
+echo "OMP_NUM_THREADS = Sequential"
+echo "MPI_NUM_PROCS = 1"
+echo "Depth = 8"
+export OMP_NUM_THREADS=1
+perf stat ./connect4 8

@@ -17,95 +17,68 @@ int max(int a, int b) {
 }
 
 
-int getBestMove(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int depth, int currentPlayer, int movesMade, int rank, int size) {
-  // Function variables
-  int bestMove = -1;
-  int bestScore = -1000; // Initialize to a very low value for maximizing player
-  int columnScores[BOARD_WIDTH] = {0, 0, 0, 0, 0, 0}; // Initialize column values to zero
+int getBestMove(int moves[MAX_NUMBER_OF_MOVES],
+                int board[BOARD_HEIGHT][BOARD_WIDTH],
+                int depth,
+                int currentPlayer,
+                int movesMade,
+                int rank,
+                int size)
+{
+    int bestMove = -1;
+    int bestScore = -1000;
+    int localScores[BOARD_WIDTH] = {0};  // puntuaciones que calcula este proceso
+    int globalScores[BOARD_WIDTH] = {0}; // acumulado en root
 
-  // Create some temporary variables so that we don't loose the original state
-  int tempMoves[MAX_NUMBER_OF_MOVES];
-  int tempMovesMade;
+    // Copias temporales para simular movimientos
+    int tempMoves[MAX_NUMBER_OF_MOVES];
+    int tempMovesMade;
 
-  // Explore all the columns
-  for(int c = rank; c < BOARD_WIDTH; c += size) {
-    // Retrieve the moves made at the beginning
-    for(int i = 0; i < movesMade; i++) {
-      tempMoves[i] = moves[i];
+    // Cada proceso explora columnas c = rank, rank+size, rank+2*size, …
+    for (int c = rank; c < BOARD_WIDTH; c += size) {
+        // Restaurar estado inicial
+        memcpy(tempMoves, moves, movesMade * sizeof(int));
+        tempMovesMade = movesMade;
+
+        int columnScore;
+
+        if (board[0][c] == EMPTY) {
+            int row = dropPiece(c, tempMoves, board, currentPlayer, &tempMovesMade);
+            bool gameOver;
+            if (checkWin(row, c, board, currentPlayer, &gameOver, tempMovesMade) > 0) {
+                // Victoria inmediata
+                columnScore = MAX_NUMBER_OF_MOVES - depth;
+            } else {
+                columnScore = minimax(tempMoves, board, depth - 1,
+                                      currentPlayer, false, tempMovesMade);
+            }
+            reconstructBoard(moves, board, movesMade);
+        } else {
+            columnScore = -1000;
+        }
+
+        localScores[c] = columnScore;
     }
 
-    // Retrieve the number of moves made at the beginning
-    tempMovesMade = movesMade;
-    
-    // Create a variable to store the column value
-    int columnScore;
+    // Sumar todas las puntuaciones locales en globalScores (en rank 0)
+    MPI_Reduce(localScores, globalScores,
+               BOARD_WIDTH, MPI_INT, MPI_SUM,
+               0, MPI_COMM_WORLD);
 
-    // See if the column is not full
-    if(board[0][c] == EMPTY) {
-      // Simulate the move
-      int row = dropPiece(c, tempMoves, board, currentPlayer, &tempMovesMade);
-
-      // Give a Score to the move
-      bool gameOver;
-      if (checkWin(row, c, board, currentPlayer, &gameOver, tempMovesMade) > 0) {
-        // If we win with this move, we assign a high Score to the column
-        columnScore = MAX_NUMBER_OF_MOVES - depth; // Assign a high value for winning move
-      } else {
-        // Call minimax to evaluate the move
-        columnScore = minimax(tempMoves, board, depth - 1, currentPlayer, false, tempMovesMade); // Neutral move
-      }
-
-      // Reconstruct the original board
-      reconstructBoard(moves, board, movesMade);
-
-    } else {
-      // If the column is full, assign a low Score
-      columnScore = -1000; 
+    // El proceso 0 elige el mejor movimiento
+    if (rank == 0) {
+        for (int c = 0; c < BOARD_WIDTH; c++) {
+            if (globalScores[c] > bestScore) {
+                bestScore = globalScores[c];
+                bestMove = c;
+            }
+        }
     }
-    
-    // Store the column Score
-    columnScores[c] = columnScore;
-  }
 
-  // Print the column scores -- commented for debugging purposes
-  /*
-  printf("Column scores: ");
-  for (int i = 0; i < BOARD_WIDTH; i++) {
-    printf("%d ", columnScores[i]);
-  }
-  printf("\n");
-  */
+    // Todos reciben el movimiento ganador
+    MPI_Bcast(&bestMove, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
-  // All the processes send the column scores to the rank 0 process
-  if (rank != 0) {
-    MPI_Send(columnScores, BOARD_WIDTH, MPI_INT, 0, 0, MPI_COMM_WORLD);
-  } else {
-    // Rank 0 process receives the column scores from all other processes
-    for (int i = 1; i < size; i++) {
-      int tempColumnScores[BOARD_WIDTH];
-      MPI_Recv(tempColumnScores, BOARD_WIDTH, MPI_INT, i, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-      for (int c = 0; c < BOARD_WIDTH; c++) {
-        columnScores[c] += tempColumnScores[c]; // Combine the scores
-      }
-    }
-  }
-
-  // The rank 0 process will find the best move
-  if (rank == 0) {
-    // Find the best move based on the column scores
-    for (int c = 0; c < BOARD_WIDTH; c++) {
-      if (columnScores[c] > bestScore) {
-        bestScore = columnScores[c];
-        bestMove = c;
-      }
-    }
-  }
-
-  // Broadcast the best move to all processes
-  MPI_Bcast(&bestMove, 1, MPI_INT, 0, MPI_COMM_WORLD);
-
-  return bestMove; // Return the best move
-
+    return bestMove;
 }
 
 

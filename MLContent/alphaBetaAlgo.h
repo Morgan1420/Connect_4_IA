@@ -1,1 +1,3 @@
 // Aquí van les declaracions de les funcions que implementen l'algorisme Alpha-Beta pruning
+int getBestMoveAB(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int depth, int currentPlayer, int movesMade, int rank, int size);
+int alphaBeta(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int depth, int currentPlayer, bool maximizingPlayer, int movesMade, int alpha, int beta);

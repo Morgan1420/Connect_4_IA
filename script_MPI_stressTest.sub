@@ -14,6 +14,8 @@ module add gcc/12.1.1
 module load openmpi/4.1.1
 
 mpicc -Ofast main.c GameLogic/boardDisplay.c GameLogic/gameFunctions.c MLContent/alphaBetaAlgo.c MLContent/minimaxAlgo.c -o connect4 -lm -lmpi
+## ALGORITHM=0 means minimax, ALGORITHM=1 means alpha-beta pruning
+ALGORITHM=1
 
 
 for DEPTH in 8 9 10 11
@@ -27,7 +29,7 @@ do
 
         ## export OMP_NUM_THREADS=1
 
-        mpirun -np $PROC ./connect4 $DEPTH
+        mpirun -np $PROC ./connect4 $DEPTH $ALGORITHM
 
         echo "---------------------------------------"
     done

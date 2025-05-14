@@ -9,13 +9,6 @@
 #include "../GameLogic/boardDisplay.h"
 #include "minimaxAlgo.h"
 
-int min(int a, int b) {
-  return (a < b) ? a : b;
-}
-int max(int a, int b) {
-  return (a > b) ? a : b;
-}
-
 
 int getBestMove(int moves[MAX_NUMBER_OF_MOVES],
                 int board[BOARD_HEIGHT][BOARD_WIDTH],

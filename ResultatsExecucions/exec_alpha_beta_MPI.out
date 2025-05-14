@@ -1,0 +1,576 @@
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 2
+Depth: 8
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 2 processes
+Rank 1 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 1 seconds
+Elapsed time: 1.31898 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 4
+Depth: 8
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 4 processes
+Rank 2 out of 4 processes
+Rank 3 out of 4 processes
+Rank 1 out of 4 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 0 seconds
+Elapsed time: 0.74783 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 6
+Depth: 8
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 5 out of 6 processes
+Rank 0 out of 6 processes
+Rank 1 out of 6 processes
+Rank 3 out of 6 processes
+Rank 2 out of 6 processes
+Rank 4 out of 6 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 0 seconds
+Elapsed time: 0.61324 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 7
+Depth: 8
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 1 out of 7 processes
+Rank 5 out of 7 processes
+Rank 2 out of 7 processes
+Rank 3 out of 7 processes
+Rank 4 out of 7 processes
+Rank 6 out of 7 processes
+Rank 0 out of 7 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 0 seconds
+Elapsed time: 0.39869 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 2
+Depth: 9
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 2 processes
+Rank 1 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 8 seconds
+Elapsed time: 8.71108 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 4
+Depth: 9
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 2 out of 4 processes
+Rank 3 out of 4 processes
+Rank 1 out of 4 processes
+Rank 0 out of 4 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 4 seconds
+Elapsed time: 4.85528 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 6
+Depth: 9
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 5 out of 6 processes
+Rank 4 out of 6 processes
+Rank 2 out of 6 processes
+Rank 1 out of 6 processes
+Rank 0 out of 6 processes
+Rank 3 out of 6 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 3 seconds
+Elapsed time: 3.99054 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 7
+Depth: 9
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 2 out of 7 processes
+Rank 3 out of 7 processes
+Rank 4 out of 7 processes
+Rank 6 out of 7 processes
+Rank 1 out of 7 processes
+Rank 5 out of 7 processes
+Rank 0 out of 7 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 2 seconds
+Elapsed time: 2.55208 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 2
+Depth: 10
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 2 processes
+Rank 1 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 57 seconds
+Elapsed time: 57.03326 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 4
+Depth: 10
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 2 out of 4 processes
+Rank 1 out of 4 processes
+Rank 0 out of 4 processes
+Rank 3 out of 4 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 31 seconds
+Elapsed time: 31.62533 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 6
+Depth: 10
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 6 processes
+Rank 5 out of 6 processes
+Rank 2 out of 6 processes
+Rank 3 out of 6 processes
+Rank 1 out of 6 processes
+Rank 4 out of 6 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 26 seconds
+Elapsed time: 26.44752 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 7
+Depth: 10
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 7 processes
+Rank 4 out of 7 processes
+Rank 3 out of 7 processes
+Rank 6 out of 7 processes
+Rank 2 out of 7 processes
+Rank 1 out of 7 processes
+Rank 5 out of 7 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 16 seconds
+Elapsed time: 16.43158 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 2
+Depth: 11
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 2 processes
+Rank 1 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 380 seconds
+Elapsed time: 380.28152 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 4
+Depth: 11
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 1 out of 4 processes
+Rank 3 out of 4 processes
+Rank 0 out of 4 processes
+Rank 2 out of 4 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 208 seconds
+Elapsed time: 208.34607 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 6
+Depth: 11
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 5 out of 6 processes
+Rank 1 out of 6 processes
+Rank 2 out of 6 processes
+Rank 0 out of 6 processes
+Rank 3 out of 6 processes
+Rank 4 out of 6 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 177 seconds
+Elapsed time: 177.11238 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 7
+Depth: 11
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 7 processes
+Rank 4 out of 7 processes
+Rank 2 out of 7 processes
+Rank 6 out of 7 processes
+Rank 1 out of 7 processes
+Rank 5 out of 7 processes
+Rank 3 out of 7 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 108 seconds
+Elapsed time: 108.10551 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------

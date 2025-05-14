@@ -26,6 +26,7 @@ int gameMode;
 bool exitGame;
 
 int minmaxDepth = 8; // Set depth for Minimax algorithm from command line argument or default to 10
+int algorithm = 0; // Select algorithm: 0 for minimax, 1 for alphabeta (default to 0)
 
 
 
@@ -71,7 +72,11 @@ int gameMode2(int rank, int size) {
       scanf("%d", &column);
     } else {
       // AI's turn
-      column = getBestMove(moves, board, minmaxDepth, currentPlayer, movesMade, rank, size);
+      if (algorithm == 0) // Minimax algorithm
+        column = getBestMove(moves, board, minmaxDepth, currentPlayer, movesMade, rank, size);
+      else // Alpha-Beta pruning algorithm
+        column = getBestMoveAB(moves, board, minmaxDepth, currentPlayer, movesMade, rank, size);
+
       printf("AI chooses column %d\n", column);
     }
   
@@ -104,7 +109,11 @@ int gameMode3(int rank, int size) {
     //displayBoard(moves, board, currentPlayer);
   
     // AI's turn
-    int column = getBestMove(moves, board, minmaxDepth, currentPlayer, movesMade, rank, size);
+    int column;
+    if (algorithm == 0) // Minimax algorithm
+      column = getBestMove(moves, board, minmaxDepth, currentPlayer, movesMade, rank, size);
+    else // Alpha-Beta pruning algorithm
+      column = getBestMoveAB(moves, board, minmaxDepth, currentPlayer, movesMade, rank, size);
     // printf("AI chooses column %d\n", column); -- comented for debugging purposes
   
     // Drop the piece
@@ -136,14 +145,26 @@ int gameMode3(int rank, int size) {
 int main(int argc, char **argv) {
 
   // Process the command line arguments
-  minmaxDepth = argc > 1 ? atoi(argv[1]) : 8; // Set depth for Minimax algorithm from command line argument or default to 10
+  minmaxDepth = argc > 1 ? atoi(argv[1]) : 8; // Set depth for Minimax algorithm from command line argument or default to 8
+  algorithm = argc > 2 ? atoi(argv[2]) : 0; // Select algorithm: 0 for minimax, 1 for alphabeta (default to 0)
   if (minmaxDepth < 1 || minmaxDepth > MAX_NUMBER_OF_MOVES) {
     printf("Invalid depth. Setting to default value of 8.\n");
     minmaxDepth = 8;
   }
-  // Eliminate the depth from the command line arguments
-  argc--;
-  argv++;
+  // Eliminate the depth and algorithm from the command line arguments
+  argc -= 2;
+  argv += 2;
+
+  // Validate algorithm selection
+  if (algorithm != 0 && algorithm != 1) {
+    printf("Invalid algorithm. Defaulting to minimax (0).\n");
+    algorithm = 0;
+  }
+  if (algorithm == 1) {
+    printf("Using Alpha-Beta pruning algorithm.\n");
+  } else {
+    printf("Using Minimax algorithm.\n");
+  }
 
   // MPI initialization
   int rank, size, err; // Variables for MPI
@@ -229,4 +250,3 @@ int main(int argc, char **argv) {
 
   return 0;
 }
-    

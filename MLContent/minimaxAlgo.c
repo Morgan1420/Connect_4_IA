@@ -4,6 +4,7 @@
 #include <string.h>
 #include <mpi.h>
 #include <fcntl.h>
+#include <omp.h>
 
 #include "../GameLogic/gameFunctions.h"
 #include "../GameLogic/boardDisplay.h"
@@ -16,7 +17,6 @@ int max(int a, int b) {
   return (a > b) ? a : b;
 }
 
-
 int getBestMove(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int depth, int currentPlayer, int movesMade, int rank, int size) {
   // Function variables
   int bestMove = -1;
@@ -27,7 +27,8 @@ int getBestMove(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WI
   int tempMoves[MAX_NUMBER_OF_MOVES];
   int tempMovesMade;
 
-  // Explore all the columns
+  // Explore all the columns with OpenMP
+  #pragma omp parallel for private(tempMoves, tempMovesMade) shared(moves, board, currentPlayer, movesMade, columnScores, rank, size, depth) default(none)
   for(int c = rank; c < BOARD_WIDTH; c += size) {
     // Retrieve the moves made at the beginning
     for(int i = 0; i < movesMade; i++) {
@@ -67,15 +68,6 @@ int getBestMove(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WI
     columnScores[c] = columnScore;
   }
 
-  // Print the column scores -- commented for debugging purposes
-  /*
-  printf("Column scores: ");
-  for (int i = 0; i < BOARD_WIDTH; i++) {
-    printf("%d ", columnScores[i]);
-  }
-  printf("\n");
-  */
-
   // All the processes send the column scores to the rank 0 process
   if (rank != 0) {
     MPI_Send(columnScores, BOARD_WIDTH, MPI_INT, 0, 0, MPI_COMM_WORLD);
@@ -105,7 +97,6 @@ int getBestMove(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WI
   MPI_Bcast(&bestMove, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
   return bestMove; // Return the best move
-
 }
 
 
@@ -125,6 +116,7 @@ int minimax(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH]
   if (maximizingPlayer == true){
     bestScore = -1000; // Initialize to a very low value for maximizing player
 
+    #pragma omp parallel for private(tempMoves, tempMovesMade) reduction(max: bestScore) shared(moves, board, tempCurrentPlayer, movesMade, depth) default(none)
     for (int c = 0; c < BOARD_WIDTH; c++) {
       // Retrieve the moves made at the beginning
       for(int i = 0; i < movesMade; i++) {
@@ -160,14 +152,13 @@ int minimax(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH]
         columnScore = -1000; 
       }
       
-      // Check if the column Score is greater than the best Score
-      if (columnScore > bestScore) {
-        bestScore = columnScore;
-      }
+      // Update bestScore if needed
+      bestScore = (columnScore > bestScore) ? columnScore : bestScore;
     }
   }else{ // minimizing player
     bestScore = 1000; // Initialize to a very high value for minimizing player
 
+    #pragma omp parallel for private(tempMoves, tempMovesMade) reduction(min: bestScore) shared(moves, board, tempCurrentPlayer, movesMade, depth) default(none)
     for (int c = 0; c < BOARD_WIDTH; c++) {
       // Retrieve the moves made at the beginning
       for(int i = 0; i < movesMade; i++) {
@@ -203,10 +194,8 @@ int minimax(int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH]
         columnScore = 1000; 
       }
       
-      // Check if the column Score is lesser than the best Score
-      if (columnScore < bestScore) {
-        bestScore = columnScore;
-      }
+      // Update bestScore if needed
+      bestScore = (columnScore < bestScore) ? columnScore : bestScore;
     }
   }
 

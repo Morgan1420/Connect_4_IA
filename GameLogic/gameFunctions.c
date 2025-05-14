@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-
+#include <omp.h>
 #include "gameFunctions.h"
 
 
@@ -72,82 +72,108 @@ int dropPiece(int column, int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT
 }
 
 
-
 int checkWin(int row, int column, int board[BOARD_HEIGHT][BOARD_WIDTH], int currentPlayer, bool *gameOver, int movesMade) {
   int player = currentPlayer;
-  int count = 0;
+  int winner = EMPTY;
 
-  // Check horizontal
-  for (int c = 0; c < BOARD_WIDTH; c++) {
-    if (board[row][c] == player) {
-      count++;
-      if (count == WINNING_LENGTH) {
-        *gameOver = true;
-        return player;
-      }
-    } else {
-      count = 0;
-    }
-  }
-
-  // Check vertical
-  count = 0;
-  for (int r = 0; r < BOARD_HEIGHT; r++) {
-    if (board[r][column] == player) {
-      count++;
-      if (count == WINNING_LENGTH) {
-        *gameOver = true;
-        return player;
-      }
-    } else {
-      count = 0;
-    }
-  }
-
-  // Check diagonal (bottom-left to top-right)
-  count = 0;
-  for (int i = -WINNING_LENGTH + 1; i < WINNING_LENGTH; i++) {
-    int r = row + i;
-    int c = column + i;
-    if (r >= 0 && r < BOARD_HEIGHT && c >= 0 && c < BOARD_WIDTH) {
-      if (board[r][c] == player) {
-        count++;
-        if (count == WINNING_LENGTH) {
-          *gameOver = true;
-          return player;
+  #pragma omp parallel sections
+  {
+    // Horizontal check
+    #pragma omp section
+    {
+      int count = 0;
+      for (int c = 0; c < BOARD_WIDTH; c++) {
+        if (board[row][c] == player) {
+          count++;
+          if (count == WINNING_LENGTH) {
+            #pragma omp critical
+            {
+              *gameOver = true;
+              winner = player;
+            }
+          }
+        } else {
+          count = 0;
         }
-      } else {
-        count = 0;
       }
     }
-  }
 
-  // Check diagonal (top-left to bottom-right)
-  count = 0;
-  for (int i = -WINNING_LENGTH + 1; i < WINNING_LENGTH; i++) {
-    int r = row - i;
-    int c = column + i;
-    if (r >= 0 && r < BOARD_HEIGHT && c >= 0 && c < BOARD_WIDTH) {
-      if (board[r][c] == player) {
-        count++;
-        if (count == WINNING_LENGTH) {
-          *gameOver = true;
-          return player;
+    // Vertical check
+    #pragma omp section
+    {
+      int count = 0;
+      for (int r = 0; r < BOARD_HEIGHT; r++) {
+        if (board[r][column] == player) {
+          count++;
+          if (count == WINNING_LENGTH) {
+            #pragma omp critical
+            {
+              *gameOver = true;
+              winner = player;
+            }
+          }
+        } else {
+          count = 0;
         }
-      } else {
-        count = 0;
+      }
+    }
+
+    // Diagonal (bottom-left to top-right)
+    #pragma omp section
+    {
+      int count = 0;
+      for (int i = -WINNING_LENGTH + 1; i < WINNING_LENGTH; i++) {
+        int r = row + i;
+        int c = column + i;
+        if (r >= 0 && r < BOARD_HEIGHT && c >= 0 && c < BOARD_WIDTH) {
+          if (board[r][c] == player) {
+            count++;
+            if (count == WINNING_LENGTH) {
+              #pragma omp critical
+              {
+                *gameOver = true;
+                winner = player;
+              }
+            }
+          } else {
+            count = 0;
+          }
+        }
+      }
+    }
+
+    // Diagonal (top-left to bottom-right)
+    #pragma omp section
+    {
+      int count = 0;
+      for (int i = -WINNING_LENGTH + 1; i < WINNING_LENGTH; i++) {
+        int r = row - i;
+        int c = column + i;
+        if (r >= 0 && r < BOARD_HEIGHT && c >= 0 && c < BOARD_WIDTH) {
+          if (board[r][c] == player) {
+            count++;
+            if (count == WINNING_LENGTH) {
+              #pragma omp critical
+              {
+                *gameOver = true;
+                winner = player;
+              }
+            }
+          } else {
+            count = 0;
+          }
+        }
       }
     }
   }
 
-  // Check for a draw
-  if (movesMade == MAX_NUMBER_OF_MOVES) {
+  // Final check for draw
+  if (winner == EMPTY && movesMade == MAX_NUMBER_OF_MOVES) {
     *gameOver = true;
-    return EMPTY; // Indicate a draw
+    return EMPTY;
   }
 
-  return EMPTY; // No winner yet
-  
+  return winner;
 }
 
 int reconstructBoard( int moves[MAX_NUMBER_OF_MOVES], int board[BOARD_HEIGHT][BOARD_WIDTH], int movesMade) {

@@ -1,0 +1,249 @@
+---------------------------------------
+OMP_NUM_THREADS: 1
+MPI_NUM_PROCS: 2
+Depth: 8
+Rank 0 out of 2 processes
+Rank 1 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 1 seconds
+Elapsed time: 1.43904 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: 2
+MPI_NUM_PROCS: 2
+Depth: 8
+Rank 1 out of 2 processes
+Rank 0 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 1 seconds
+Elapsed time: 1.43634 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: 4
+MPI_NUM_PROCS: 2
+Depth: 8
+Rank 0 out of 2 processes
+Rank 1 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 1 seconds
+Elapsed time: 1.43613 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: 6
+MPI_NUM_PROCS: 2
+Depth: 8
+Rank 0 out of 2 processes
+Rank 1 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 1 seconds
+Elapsed time: 1.43700 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: 1
+MPI_NUM_PROCS: 4
+Depth: 8
+Rank 2 out of 4 processes
+Rank 3 out of 4 processes
+Rank 1 out of 4 processes
+Rank 0 out of 4 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 0 seconds
+Elapsed time: 0.81042 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: 2
+MPI_NUM_PROCS: 4
+Depth: 8
+Rank 1 out of 4 processes
+Rank 0 out of 4 processes
+Rank 2 out of 4 processes
+Rank 3 out of 4 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 0 seconds
+Elapsed time: 0.81021 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: 4
+MPI_NUM_PROCS: 4
+Depth: 8
+Rank 2 out of 4 processes
+Rank 0 out of 4 processes
+Rank 1 out of 4 processes
+Rank 3 out of 4 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 0 seconds
+Elapsed time: 0.80867 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: 6
+MPI_NUM_PROCS: 4
+Depth: 8
+Rank 2 out of 4 processes
+Rank 3 out of 4 processes
+Rank 1 out of 4 processes
+Rank 0 out of 4 processes
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 0 seconds
+Elapsed time: 0.81115 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: 1
+MPI_NUM_PROCS: 2
+Depth: 9
+Rank 1 out of 2 processes
+Rank 0 out of 2 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 9 seconds
+Elapsed time: 9.42690 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: 2
+MPI_NUM_PROCS: 2
+Depth: 9
+Rank 0 out of 2 processes
+Rank 1 out of 2 processes
+slurmstepd: error: *** JOB 44912 ON clus07 CANCELLED AT 2025-05-14T18:34:52 ***
+--------------------------------------------------------------------------
+ORTE has lost communication with a remote daemon.
+
+  HNP daemon   : [[17790,0],0] on node clus07
+  Remote daemon: [[17790,0],1] on node clus08
+
+This is usually due to either a failure of the TCP network
+connection to the node, or possibly an internal failure of
+the daemon itself. We cannot recover from this failure, and
+therefore will terminate the job.
+--------------------------------------------------------------------------

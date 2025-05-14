@@ -1,0 +1,105 @@
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 1
+Depth: 8
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 1 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 2 seconds
+Elapsed time: 2.39311 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 1
+Depth: 9
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 1 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 5 5 6 6 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 15 seconds
+Elapsed time: 15.65370 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 1
+Depth: 10
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 1 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 102 seconds
+Elapsed time: 102.20824 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 1
+Depth: 11
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 1 processes
+Current board:
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 1 2 2 0 
+1 1 2 2 1 1 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 6 6 5 5 6 6 6 6 7 7 
+Player 2 wins!
+Elapsed time: 681 seconds
+Elapsed time: 681.98785 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+OMP_NUM_THREADS: Sequential
+MPI_NUM_PROCS: 1
+Depth: 12
+Using Alpha-Beta pruning algorithm.
+Rank 0 out of 1 processes
+Current board:
+2 2 1 1 0 0 0 
+1 1 2 2 0 0 0 
+2 2 1 1 2 0 0 
+1 1 2 2 1 0 0 
+2 2 1 2 2 2 2 
+1 1 1 2 1 1 1 
+Current player: 2
+Moves made: 1 1 1 1 1 1 2 2 2 2 2 2 3 4 3 3 3 3 3 4 5 4 4 4 4 5 5 5 7 7 6 6 
+Player 2 wins!
+Elapsed time: 4467 seconds
+Elapsed time: 4467.86426 seconds
+Do you want to play again? (y/n): Thanks for playing!
+Exiting the game...
+---------------------------------------
+
